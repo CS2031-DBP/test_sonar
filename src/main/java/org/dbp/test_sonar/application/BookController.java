@@ -34,9 +34,9 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedBook);
     }
 
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
-//        bookService.deleteBook(id);
-//        return ResponseEntity.noContent().build();
-//    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+        bookService.deleteBook(id);
+        return ResponseEntity.noContent().build();
+    }
 }
