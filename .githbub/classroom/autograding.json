@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Spring",
+      "setup": "mvn compile",
+      "run": "mvn -Dtest=ProductServiceTest test",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    }
+  ]
+}
