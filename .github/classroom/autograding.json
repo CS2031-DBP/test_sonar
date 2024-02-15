@@ -3,7 +3,7 @@
     {
       "name": "Spring",
       "setup": "mvn compile",
-      "run": "mvn -Dtest=ProductServiceTest test",
+      "run": "mvn test",
       "input": null,
       "output": null,
       "comparison": "exact",
