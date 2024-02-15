@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -19,8 +20,8 @@ import java.util.Optional;
 
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
-public class BookControllerTest {
+@SpringBootTest
+public class BookControllerTests {
 
     @Mock
     private BookService bookService;
@@ -32,12 +33,11 @@ public class BookControllerTest {
 
     @Before
     public void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(bookController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(this).build();
     }
 
     @Test
     public void testGetBookById_Success() throws Exception {
-        // Mock del objeto Book
         Book book = new Book();
         book.setId(1L);
         book.setTitle("Test Book");
